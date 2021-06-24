@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.searcherContainer {
+  max-width: 1440px;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.searcherResult {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-gap: 10px;
+}
+
+.searcherResult img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .searcherResult {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .searcherResult {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

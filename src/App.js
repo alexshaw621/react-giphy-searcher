@@ -33,17 +33,23 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <SearchBox 
-          searchTerm={this.state.searchTerm}
-          onSearchTermChange={this.onSearchTermChange}
-          getGifs={this.getGifs}
-        />
-
-        {
-          this.state.gifs.map( gifObj => 
-            <GiphyResult key={gifObj.id} gifObj={gifObj} /> 
-          )
-        }
+        <div className="searcherContainer">
+          <div class="searcherForm">
+            <h1>Giphy Client</h1>
+            <SearchBox 
+              searchTerm={this.state.searchTerm}
+              onSearchTermChange={this.onSearchTermChange}
+              getGifs={this.getGifs}
+            />
+          </div>
+          <div class="searcherResult">
+            {
+              this.state.gifs.map( gifObj => 
+                <GiphyResult key={gifObj.id} gifObj={gifObj} /> 
+              )
+            }
+          </div>
+        </div>
       </div>
     );
   }
